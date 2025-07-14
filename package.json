@@ -1,6 +1,6 @@
 {
   "name": "jaz-vite-poc",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Booking Design System POC using Vite",
   "type": "module",
   "files": [
