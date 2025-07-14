@@ -16,6 +16,7 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
+    "emitDeclarationOnly": false,
     "declarationDir": "dist",
     "outDir": "dist",
     "types": ["@testing-library/jest-dom"]
