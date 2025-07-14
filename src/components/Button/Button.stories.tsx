@@ -9,16 +9,9 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['primary', 'secondary', 'outline'],
-    },
-    size: {
-      control: { type: 'select' },
-      options: ['sm', 'md', 'lg'],
-    },
-    fullWidth: {
-      control: { type: 'boolean' },
+    color: {
+      control: { type: 'text' },
+      description: 'Background color (Tailwind class name without bg- prefix)',
     },
   },
 } satisfies Meta<typeof Button>;
@@ -26,58 +19,24 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
+  args: {},
+};
+
+export const RedButton: Story = {
   args: {
-    variant: 'primary',
-    children: 'Primary Button',
+    color: 'red-500',
   },
 };
 
-export const Secondary: Story = {
+export const BlueButton: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Secondary Button',
+    color: 'blue-500',
   },
 };
 
-export const Outline: Story = {
+export const GreenButton: Story = {
   args: {
-    variant: 'outline',
-    children: 'Outline Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'sm',
-    children: 'Small Button',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    size: 'md',
-    children: 'Medium Button',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'lg',
-    children: 'Large Button',
-  },
-};
-
-export const FullWidth: Story = {
-  args: {
-    fullWidth: true,
-    children: 'Full Width Button',
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-    children: 'Disabled Button',
+    color: 'green-500',
   },
 };

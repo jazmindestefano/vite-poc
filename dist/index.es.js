@@ -1355,8 +1355,8 @@ if (process.env.NODE_ENV === 'production') {
 
 var jsxRuntimeExports = jsxRuntime.exports;
 
-const Button = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("button", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "soy un boton" }) });
+const Button = ({ color = "yellow-ujv" }) => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("button", { "data-testid": "button", className: `bg-${color}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "soy un boton" }) });
 };
 
 export { Button };

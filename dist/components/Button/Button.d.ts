@@ -1,2 +1,4 @@
-export declare const Button: () => import("react/jsx-runtime").JSX.Element;
-export default Button;
+export interface ButtonProps {
+    color?: string;
+}
+export declare const Button: ({ color }: ButtonProps) => import("react/jsx-runtime").JSX.Element;

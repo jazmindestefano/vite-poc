@@ -499,6 +499,11 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
-.outline {
-  outline-style: solid;
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
+}
+.bg-yellow-ujv {
+  --tw-bg-opacity: 1;
+  background-color: rgb(118 118 118 / var(--tw-bg-opacity, 1));
 }

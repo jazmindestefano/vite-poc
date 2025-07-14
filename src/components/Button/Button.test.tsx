@@ -10,7 +10,7 @@ describe('Button', () => {
   });
 
   it('changes background color when color prop is passed', () => {
-    render(<Button color="bg-red-500" />);
+    render(<Button color="red-500" />);
     const button = screen.getByTestId('button');
     expect(button.className).toContain('bg-red-500');
   });

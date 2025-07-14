@@ -1,4 +1,4 @@
-interface ButtonProps {
+export interface ButtonProps {
   color?: string;
 }
 
@@ -9,5 +9,3 @@ export const Button = ({ color = 'yellow-ujv' }: ButtonProps) => {
     </button>
   );
 };
-
-export default Button;
