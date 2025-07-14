@@ -1,2 +1,1 @@
-
-export { Button, type ButtonProps } from './components/Button/Button';
+export * from './src/index'

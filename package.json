@@ -1,10 +1,11 @@
 {
   "name": "jaz-vite-poc",
-  "version": "0.1.9",
+  "version": "0.1.13",
   "description": "Booking Design System POC using Vite",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "tailwind.config.ts"
   ],
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
@@ -15,7 +16,8 @@
       "require": "./dist/index.umd.js",
       "types": "./dist/index.d.ts"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./tailwind-config": "./tailwind.config.ts"
   },
   "scripts": {
     "dev": "vite",

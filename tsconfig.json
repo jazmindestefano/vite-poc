@@ -21,6 +21,6 @@
     "outDir": "dist",
     "types": ["@testing-library/jest-dom"]
   },
-  "include": ["src", "src/setupTests.ts"],
+  "include": ["src", "tailwind.config.ts", "src/setupTests.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
