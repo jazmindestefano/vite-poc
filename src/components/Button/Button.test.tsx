@@ -9,15 +9,15 @@ describe('Button', () => {
     expect(button).toBeInTheDocument();
   });
 
-  it('contains the correct text', () => {
-    render(<Button />);
-    const buttonText = screen.getByText('soy un boton');
-    expect(buttonText).toBeInTheDocument();
+  it('changes background color when color prop is passed', () => {
+    render(<Button color="bg-red-500" />);
+    const button = screen.getByTestId('button');
+    expect(button.className).toContain('bg-red-500');
   });
 
-  it('has a paragraph element inside', () => {
+  it('uses yellow-ujv as default background color when no color prop is passed', () => {
     render(<Button />);
-    const paragraph = screen.getByText('soy un boton');
-    expect(paragraph.tagName).toBe('P');
+    const button = screen.getByTestId('button');
+    expect(button.className).toContain('bg-yellow-ujv');
   });
 });

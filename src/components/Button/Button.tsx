@@ -1,9 +1,10 @@
-import React from 'react';
+interface ButtonProps {
+  color?: string;
+}
 
-export const Button = () => {
-  
+export const Button = ({ color = 'yellow-ujv' }: ButtonProps) => {
   return (
-    <button>
+    <button data-testid="button" className={`bg-${color}`}>
       <p>soy un boton</p>
     </button>
   );
