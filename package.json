@@ -22,6 +22,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --emitDeclarationOnly && vite build",
+    "publish-local": "npm run build && yalc publish --push",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run",
