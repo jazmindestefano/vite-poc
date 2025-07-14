@@ -19,24 +19,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {},
-};
-
-export const RedButton: Story = {
+export const BaseButton: Story = {
   args: {
-    color: 'red-500',
-  },
-};
-
-export const BlueButton: Story = {
-  args: {
-    color: 'blue-500',
-  },
-};
-
-export const GreenButton: Story = {
-  args: {
-    color: 'green-500',
+    color: 'yellow-ujv',
   },
 };
