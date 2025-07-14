@@ -1,120 +1,155 @@
 # Publishing to npm
 
-This guide explains how to publish the Booking Design System component library to npm.
+A simple guide to publish your component library to npm.
 
 ## Prerequisites
 
-1. **npm Account**: You need an npm account. If you don't have one, create it at [npmjs.com/signup](https://www.npmjs.com/signup).
+- An npm account (create one at [npmjs.com/signup](https://www.npmjs.com/signup))
+- Node.js installed on your machine
 
-2. **Access to the Organization**: For scoped packages like `@booking-design-system/vite-poc`, you need to be a member of the organization.
+## Quick Publishing Steps
 
-## Step 1: Prepare Your Package
+### 1. Update React Compatibility
 
-Ensure your package.json is properly configured:
+Make sure your package.json has the correct peer dependencies:
 
 ```json
-{
-  "name": "@booking-design-system/vite-poc",
-  "version": "0.1.0",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./style.css": "./dist/style.css"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+"peerDependencies": {
+  "react": "^18.0.0 || ^19.0.0",
+  "react-dom": "^18.0.0 || ^19.0.0"
 }
 ```
 
-Key points:
-- `files`: Specifies which files/directories to include in the published package
-- `main`, `module`, `types`: Entry points for different module systems
-- `exports`: Provides more granular control over entry points
-- `publishConfig`: Sets the package as public (required for scoped packages)
+### 2. Update Version Number
 
-## Step 2: Build Your Package
+Increment the version in package.json:
 
-Before publishing, build your package:
+```json
+"version": "0.1.4",
+```
+
+Follow semantic versioning:
+- Patch (0.1.3 → 0.1.4): Bug fixes
+- Minor (0.1.3 → 0.2.0): New features (backward compatible)
+- Major (0.1.3 → 1.0.0): Breaking changes
+
+### 3. Build Your Package
 
 ```bash
 npm run build
 ```
 
-This will generate the distribution files in the `dist` directory.
-
-## Step 3: Login to npm
-
-Login to your npm account:
+### 4. Login to npm (if not already logged in)
 
 ```bash
 npm login
 ```
 
-Follow the prompts to enter your username, password, and email.
-
-## Step 4: Publish Your Package
-
-Publish your package:
+### 5. Publish Your Package
 
 ```bash
 npm publish
 ```
 
-## Step 5: Updating Your Package
+## Using Your Published Package
 
-When you need to update your package:
+Install in another project:
 
-1. Update the version in package.json following semantic versioning:
-   - For bug fixes: `npm version patch`
-   - For new features (backward compatible): `npm version minor`
-   - For breaking changes: `npm version major`
+```bash
+# Using npm
+npm install jaz-vite-poc
 
-2. Build and publish:
+# Using yarn
+yarn add jaz-vite-poc
+```
+
+## Troubleshooting
+
+### React Version Conflicts
+
+If you're using React 19 and encounter version conflicts like this:
+
+```
+Error: Override for react@19.0.0 conflicts with direct dependency
+```
+
+Try one of these solutions:
+
+#### Solution 1: Use the resolutions field (Yarn)
+
+In your project's `package.json`, add a resolutions field:
+
+```json
+"resolutions": {
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0"
+}
+```
+
+Then run:
+
+```bash
+yarn install
+```
+
+#### Solution 2: Use the --force flag (npm)
+
+```bash
+npm install jaz-vite-poc --force
+```
+
+#### Solution 3: Use the --legacy-peer-deps flag (npm)
+
+```bash
+npm install jaz-vite-poc --legacy-peer-deps
+```
+
+Import and use:
+
+```jsx
+// Import the CSS
+import 'jaz-vite-poc/style.css';
+
+// Import components
+import { Button } from 'jaz-vite-poc';
+
+function MyComponent() {
+  return <Button color="red-500" />;
+}
+```
+
+## Troubleshooting
+
+### React Version Conflicts
+
+If you see errors like:
+```
+npm error code EOVERRIDE
+npm error Override for react@19.0.0 conflicts with direct dependency
+```
+
+Make sure your peer dependencies include the React version used in the target project:
+
+```json
+"peerDependencies": {
+  "react": "^18.0.0 || ^19.0.0",
+  "react-dom": "^18.0.0 || ^19.0.0"
+}
+```
+
+### Git Issues with npm version
+
+If you see:
+```
+npm error Git working directory not clean.
+```
+
+Either:
+1. Commit your changes first:
    ```bash
-   npm run build
-   npm publish
+   git add .
+   git commit -m "Update package"
+   npm version patch
    ```
 
-## Using Named Exports
-
-Our library uses named exports instead of default exports, which provides several advantages:
-
-1. **Better Tree-Shaking**: Bundlers can more easily eliminate unused code.
-2. **Consistent Import Syntax**: Users always use the same import pattern.
-3. **Better IDE Support**: Provides better autocomplete and refactoring.
-4. **Prevents Naming Inconsistencies**: Ensures consistent component naming.
-
-### How to Export Components
-
-When adding new components, follow this pattern:
-
-1. Export your component using named exports:
-   ```tsx
-   // src/components/NewComponent/NewComponent.tsx
-   export interface NewComponentProps {
-     // props definition
-   }
-   
-   export const NewComponent = (props: NewComponentProps) => {
-     // component implementation
-   };
-   ```
-
-2. Re-export from the main index.ts file:
-   ```tsx
-   // src/index.ts
-   export { Button } from './components/Button/Button';
-   export { NewComponent } from './components/NewComponent/NewComponent';
-   ```
-
-This ensures all components are available through the main package entry point.
+2. Or manually update the version in package.json

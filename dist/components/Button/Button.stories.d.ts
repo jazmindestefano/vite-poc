@@ -1,4 +1,4 @@
-import { StoryObj } from '@storybook/react';
+import { StoryObj } from '@storybook/react-vite';
 
 declare const meta: {
     title: string;
@@ -10,7 +10,7 @@ declare const meta: {
     argTypes: {
         color: {
             control: {
-                type: string;
+                type: "text";
             };
             description: string;
         };
