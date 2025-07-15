@@ -13,8 +13,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'JazVitePoc',
-      formats: ['es', 'umd'],
+      formats: ['es'],
       fileName: (format) => `index.${format}.js`,
     },
     cssCodeSplit: true,
