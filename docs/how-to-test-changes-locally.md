@@ -96,3 +96,9 @@ yarn install
 ```bash
 yarn unlink
 ```
+
+### To unlink from booking-engine-widget run
+
+```bash
+yarn unlink "jaz-vite-poc"
+```
