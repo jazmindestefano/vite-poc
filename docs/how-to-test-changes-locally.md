@@ -64,13 +64,14 @@ Así se actualiza tu yarn.lock y se elimina cualquier rastro del paquete local.
 ### In Design System:
 
 ```bash
+npm run build
 npm link
 ```
 
 ### In booking-engine-widget/ (Next.js):
 
 ```bash
-npm link jaz-vite-poc
+yarn link jaz-vite-poc
 yarn install
 ```
 
@@ -86,6 +87,6 @@ npm link
 ### In booking-engine-widget/ (Next.js):
 
 ```bash
-npm link jaz-vite-poc
+yarn link jaz-vite-poc
 yarn install
 ```
