@@ -31,24 +31,24 @@ git clone https://github.com/your-org/booking-design-system-vite-poc.git
 cd booking-design-system-vite-poc
 
 # Install dependencies
-npm install
+yarn install
 ```
 
 ### Development
 
 ```bash
 # Start Storybook for component development
-npm run storybook
+yarn storybook
 
 # Run tests
-npm test
+yarn test
 ```
 
 ### Building
 
 ```bash
 # Build the library
-npm run build
+yarn build
 ```
 
 ## Usage
@@ -93,10 +93,10 @@ To publish the package to NPM:
 
 ```bash
 # Login to NPM
-npm login
+yarn login
 
 # Publish the package
-npm publish
+yarn publish
 ```
 
 ## Vite vs Rollup Comparison
@@ -125,7 +125,7 @@ After publishing the package, you can test it in the OBE project by:
 
 1. Installing the package:
    ```bash
-   npm install @booking-design-system/vite-poc
+   yarn add @booking-design-system/vite-poc
    ```
 
 2. Importing and using components:

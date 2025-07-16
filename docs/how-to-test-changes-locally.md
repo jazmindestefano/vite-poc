@@ -71,7 +71,7 @@ npm link
 ### In booking-engine-widget/ (Next.js):
 
 ```bash
-yarn link jaz-vite-poc
+yarn link "jaz-vite-poc"
 yarn install
 ```
 
@@ -87,6 +87,6 @@ npm link
 ### In booking-engine-widget/ (Next.js):
 
 ```bash
-yarn link jaz-vite-poc
+yarn link "jaz-vite-poc"
 yarn install
 ```
