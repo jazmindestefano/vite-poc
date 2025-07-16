@@ -91,9 +91,8 @@ yarn link "jaz-vite-poc"
 yarn install
 ```
 
-### To unlink
+### To unlink from Design System run
 
 ```bash
-yarn unlink "jaz-vite-poc"
-yarn install --force
+yarn unlink
 ```
