@@ -57,3 +57,35 @@ yarn install
 ```
 
 Así se actualiza tu yarn.lock y se elimina cualquier rastro del paquete local.
+
+
+## npm/yarn link, another option
+
+### In Design System:
+
+```bash
+npm link
+```
+
+### In booking-engine-widget/ (Next.js):
+
+```bash
+npm link jaz-vite-poc
+yarn install
+```
+
+## For later updates (after code changes in Design System):
+
+### In Design System:
+
+```bash
+npm run build
+npm link
+```
+
+### In booking-engine-widget/ (Next.js):
+
+```bash
+npm link jaz-vite-poc
+yarn install
+```
