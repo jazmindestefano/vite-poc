@@ -90,3 +90,10 @@ npm link
 yarn link "jaz-vite-poc"
 yarn install
 ```
+
+### To unlink
+
+```bash
+yarn unlink "jaz-vite-poc"
+yarn install --force
+```
