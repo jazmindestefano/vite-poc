@@ -17,8 +17,16 @@ yarn link "jaz-vite-poc"
 
 ## For later updates (after code changes in Design System) repeat the same procedure
 
-### To unregister link from Design System
+This unregisters the link for your package.
+
+### In Design System:
 
 ```bash
 yarn unlink
+```
+
+### In booking-engine-widget/ (Next.js):
+
+```bash
+yarn unlink "jaz-vite-poc"
 ```
